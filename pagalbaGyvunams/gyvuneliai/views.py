@@ -1,11 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Animal
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'gyvuneliai/home.html')
+
+    # animals = Animal.objects.all()
+    animals = Animal.objects.filter(active=True)
+
+    context = {'animals' : animals}
+    return render(request, 'gyvuneliai/home.html', context)
 
 
 def posts(request):

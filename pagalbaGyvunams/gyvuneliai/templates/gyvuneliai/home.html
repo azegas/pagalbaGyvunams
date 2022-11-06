@@ -1,5 +1,10 @@
 {% extends 'gyvuneliai/main.html' %}
 
 {% block content %}
-    <p>HOME</p>
+    {% for animal in animals %}
+        <h2>{{animal.title}}</h2>
+        <p>{{animal.description|safe}}</p>
+    {% empty %}
+        <h3>no posts found...</h3>
+    {% endfor %}
 {% endblock content %}
