@@ -18,6 +18,7 @@ class Animal(models.Model):
     active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag, blank=False)
+    photo = models.ImageField(upload_to="photo/%Y/%m%d", blank=True)
 
     # Tell how you want the info to be sorted and named in
     # django-admin panel. No need to re-migrate
