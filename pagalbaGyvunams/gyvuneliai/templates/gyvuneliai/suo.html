@@ -1,0 +1,14 @@
+{% extends 'gyvuneliai/main.html' %}
+
+{% block content %}
+<div class="card-deck">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{suo.photo.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{suo.title}}</h5>
+            <p class="card-text">{{suo.description|safe}}.</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

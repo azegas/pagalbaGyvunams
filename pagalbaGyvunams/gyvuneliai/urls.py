@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('kates/', views.kates, name="kates"),
     path('sunys/', views.sunys, name="sunys"),
+    path('suo/<str:pk>', views.suo, name="suo"),
     path('kontaktai/', views.kontaktai, name="kontaktai"),
     path('apie/', views.apie, name="apie"),
     path('savanoryste/', views.savanoryste, name="savanoryste"),

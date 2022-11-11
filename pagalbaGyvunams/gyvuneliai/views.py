@@ -14,11 +14,14 @@ def home(request):
 
 
 def sunys(request):
-    # animals = Animal.objects.all()
-    animals = Animal.objects.filter(title="Vilkiukai")
+    return render(request, 'gyvuneliai/sunys.html')
 
-    context = {'animals' : animals}
-    return render(request, 'gyvuneliai/home.html', context)
+
+def suo(request, pk):
+    suo = Animal.objects.get(id=pk)
+
+    context = {'suo' : suo}
+    return render(request, 'gyvuneliai/suo.html', context)
 
 
 def kates(request):
