@@ -13,9 +13,33 @@ def home(request):
     return render(request, 'gyvuneliai/home.html', context)
 
 
-def posts(request):
-    return render(request, 'gyvuneliai/posts.html')
+def sunys(request):
+    # animals = Animal.objects.all()
+    animals = Animal.objects.filter(title="Vilkiukai")
+
+    context = {'animals' : animals}
+    return render(request, 'gyvuneliai/home.html', context)
 
 
-def post(request):
-    return render(request, 'gyvuneliai/post.html')
+def kates(request):
+    return render(request, 'gyvuneliai/kates.html')
+
+
+def kontaktai(request):
+    return render(request, 'gyvuneliai/kontaktai.html')
+
+
+def apie(request):
+    return render(request, 'gyvuneliai/apie_mus.html')
+
+
+def savanoryste(request):
+    return render(request, 'gyvuneliai/savanoryste.html')
+
+
+def statistika(request):
+    return render(request, 'gyvuneliai/statistika.html')
+
+
+def parama(request):
+    return render(request, 'gyvuneliai/parama.html')

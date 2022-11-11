@@ -7,8 +7,13 @@ from django.conf import settings  # use the settings from settings.py file
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('posts/', views.posts, name="posts"),
-    path('post/', views.post, name="post"),
+    path('kates/', views.kates, name="kates"),
+    path('sunys/', views.sunys, name="sunys"),
+    path('kontaktai/', views.kontaktai, name="kontaktai"),
+    path('apie/', views.apie, name="apie"),
+    path('savanoryste/', views.savanoryste, name="savanoryste"),
+    path('statistika/', views.statistika, name="statistika"),
+    path('parama/', views.parama, name="parama"),
 ]
 
 # good explanation here at 7:50 - https://www.youtube.com/watch?v=aNk2CAkHvlE&ab_channel=DennisIvy

@@ -1,0 +1,20 @@
+{% extends 'gyvuneliai/main.html' %}
+
+{% block content %}
+<p>SUNYS</p>
+
+<div class="card-deck">
+    {% for animal in animals %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{animal.photo.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{animal.title}}</h5>
+            <p class="card-text">{{animal.description|safe}}.</p>
+            <a href="{% url 'suo' suo.id %}">button</a>
+        </div>
+    </div>
+    {% empty %}
+    <h3>no posts found...</h3>
+    {% endfor %}
+</div>
+{% endblock content %}
