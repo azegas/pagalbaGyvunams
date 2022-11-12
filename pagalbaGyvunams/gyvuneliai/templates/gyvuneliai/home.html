@@ -13,8 +13,9 @@
         <div class="card mb-3">
             <img class="card-img-top" src="{{animal.photo.url}}" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">{{animal.title}}</h5>
-                <a href="{% url 'suo' animal.id %}">{{animal.id}}</a><!-- KLAUSTUKAS, reikia kad veiktu ir su katem -->
+                <a href="{% url 'suo' animal.id %}" class="card-title text-center stretched-link">
+                    <h5>{{animal.title}}</h5>
+                </a>
             </div>
         </div>
     </div>
