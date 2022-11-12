@@ -42,6 +42,13 @@ def kates(request):
     return render(request, 'gyvuneliai/kates.html', context)
 
 
+def kate(request, pk):
+    kate = Animal.objects.get(id=pk)
+
+    context = {'kate' : kate}
+    return render(request, 'gyvuneliai/kate.html', context)
+
+
 def kontaktai(request):
     return render(request, 'gyvuneliai/kontaktai.html')
 
