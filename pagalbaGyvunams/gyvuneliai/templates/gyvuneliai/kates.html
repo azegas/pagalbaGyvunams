@@ -1,5 +1,22 @@
 {% extends 'gyvuneliai/main.html' %}
 
 {% block content %}
-    <p>KATES</p>
+
+<h1>Kates</h1>
+
+<div class="card-deck">
+<!-- "kates" is defined in views context -->
+    {% for kate in kates %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{kate.photo.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{kate.title}}</h5>
+            <p class="card-text">{{kate.description|safe}}.</p>
+        </div>
+    </div>
+    {% empty %}
+    <h3>no posts found...</h3>
+    {% endfor %}
+</div>
+
 {% endblock content %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Animal
+from .models import Animal, Tag
+from django.db import connection
 
 # Create your views here.
 
@@ -9,12 +10,20 @@ def home(request):
     # animals = Animal.objects.all()
     animals = Animal.objects.filter(active=True)
 
+    print(animals)
+    print(connection.queries)
+
     context = {'animals' : animals}
     return render(request, 'gyvuneliai/home.html', context)
 
 
 def sunys(request):
-    return render(request, 'gyvuneliai/sunys.html')
+    sunys = Animal.objects.filter(tags__name="Suo")
+
+    print(sunys)                # little help to make sure the querry is correct
+
+    context = {'sunys' : sunys}  # how you define it here, will later be used in template
+    return render(request, 'gyvuneliai/sunys.html', context)
 
 
 def suo(request, pk):
@@ -25,7 +34,12 @@ def suo(request, pk):
 
 
 def kates(request):
-    return render(request, 'gyvuneliai/kates.html')
+    kates = Animal.objects.filter(tags__name="Kate")
+
+    print(kates)                # little help to make sure the querry is correct
+
+    context = {'kates' : kates}  # how you define it here, will later be used in template
+    return render(request, 'gyvuneliai/kates.html', context)
 
 
 def kontaktai(request):

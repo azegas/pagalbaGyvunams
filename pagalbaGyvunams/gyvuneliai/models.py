@@ -17,7 +17,8 @@ class Animal(models.Model):
     # content = models.TextField(null=True, blank=True)
     active = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
-    tags = models.ManyToManyField(Tag, blank=False)
+    # tags = models.ManyToManyField(Tag, blank=False)
+    tags = models.ForeignKey(Tag, default=1, on_delete=models.SET_DEFAULT)  # if deleting a tag, all posts with that tag WONT be deleted, only a default tag will be applied
     photo = models.ImageField(upload_to="photo/%Y/%m%d", blank=True)
 
     # Tell how you want the info to be sorted and named in

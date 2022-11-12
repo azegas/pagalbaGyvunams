@@ -1,6 +1,22 @@
 {% extends 'gyvuneliai/main.html' %}
 
 {% block content %}
-<p>SUNYS</p>
+    <h1>SUNYS</h1>
+
+<div class="card-deck">
+<!-- "sunys" is defined in views context -->
+    {% for suo in sunys %}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{suo.photo.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{suo.title}}</h5>
+            <p class="card-text">{{suo.description|safe}}.</p>
+            <a href="{% url 'suo' suo.id %}">{{suo.id}}</a><!-- KLAUSTUKAS, reikia kad veiktu ir su katem -->
+        </div>
+    </div>
+    {% empty %}
+    <h3>no posts found...</h3>
+    {% endfor %}
+    </div>
 
 {% endblock content %}
