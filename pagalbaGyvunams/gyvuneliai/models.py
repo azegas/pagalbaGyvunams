@@ -5,6 +5,9 @@ from ckeditor.fields import RichTextField
 
 
 class Tag(models.Model):
+    """
+    Model for Cat/dog tag, later used in Animal model
+    """
     name = models.CharField(max_length=200)
 
     def __str__(self):
@@ -12,14 +15,43 @@ class Tag(models.Model):
 
     
 class Animal(models.Model):
-    title = models.CharField(max_length=200)
-    description = RichTextField(null=True, blank=True)
-    # content = models.TextField(null=True, blank=True)
-    active = models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
-    # tags = models.ManyToManyField(Tag, blank=False)
-    tags = models.ForeignKey(Tag, default=1, on_delete=models.SET_DEFAULT)  # if deleting a tag, all posts with that tag WONT be deleted, only a default tag will be applied
-    photo = models.ImageField(upload_to="photo/%Y/%m%d", blank=True)
+    """
+    Model for creating single animal in the DB
+    """
+    title = models.CharField(
+        max_length=200,
+        verbose_name=('vardas'),
+        help_text= ("Įrašyk gyvūnėlio vardą"),
+    )
+    description = RichTextField(
+        null=True,
+        blank=True,
+        help_text= ("Parašyk trumpą aprašymą apie gyvūnėlį"),
+        verbose_name=('Apie gyvunėlį'),
+    )
+    active = models.BooleanField(
+        default=False,
+        verbose_name=('Ar įrašas aktyvus? Taip/Ne'),
+        help_text= ("Jeigu neuždėsi varnelės - įrašas nebus aktyvus, nebus matomas puslapyje"),
+    )
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+    tags = models.ForeignKey(
+        Tag,
+        default=1,
+        on_delete=models.SET_DEFAULT, # if deleting a tag, all posts
+                                      # with that tag WONT be deleted,
+                                      # only a default tag will be
+                                      # applied
+        verbose_name=('Šuo/Katė'),
+    )
+    photo = models.ImageField(
+        upload_to="photo/%Y/%m%d",
+        blank=True,
+        verbose_name=('Nuotrauka'),
+        help_text= ("Išrink ir įkelk gražiausią mažuliuko nuotrauką"),
+    )
 
     # Tell how you want the info to be sorted and named in
     # django-admin panel. No need to re-migrate
