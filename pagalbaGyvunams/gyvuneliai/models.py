@@ -24,6 +24,11 @@ class Animal(models.Model):
     """
     Model for creating single animal in the DB
     """
+    active = models.BooleanField(
+        default=False,
+        verbose_name=('Ar įrašas aktyvus? Taip/Ne'),
+        help_text= ("Jeigu neuždėsi varnelės - įrašas nebus aktyvus, nebus matomas puslapyje"),
+    )
     title = models.CharField(
         max_length=50,
         verbose_name=('Vardas'),
@@ -54,16 +59,12 @@ class Animal(models.Model):
         choices = GENDER,
         default = 'Patinas',
     )
-    description = RichTextField(
+    description = models.CharField(
+        max_length = 255,
         null=True,
         blank=True,
         help_text= ("Parašyk trumpą aprašymą apie gyvūnėlį"),
-        verbose_name=('Apie gyvunėlį(temperamentas)'),
-    )
-    active = models.BooleanField(
-        default=False,
-        verbose_name=('Ar įrašas aktyvus? Taip/Ne'),
-        help_text= ("Jeigu neuždėsi varnelės - įrašas nebus aktyvus, nebus matomas puslapyje"),
+        verbose_name=('Apibūdink gyvūnėlio temperamentą'),
     )
     good_with_dogs = models.CharField(
         max_length = 100,
@@ -82,7 +83,7 @@ class Animal(models.Model):
     adoption_donation = models.IntegerField(
         null=True,
         blank=True,
-        verbose_name=('Adoption mokestis'),
+        verbose_name=('Adoption mokestis(eur)'),
     )
     created = models.DateTimeField(
         auto_now_add=True
@@ -101,6 +102,12 @@ class Animal(models.Model):
         blank=True,
         verbose_name=('Nuotrauka'),
         help_text= ("Išrink ir įkelk gražiausią mažuliuko nuotrauką"),
+    )
+    story = RichTextField(
+        null=True,
+        blank=True,
+        verbose_name=('Istorija'),
+        help_text= ("Parašyk trumpą istoriją/aprašymą apie gyvūnėlį"),
     )
 
     # Tell how you want the info to be sorted and named in
