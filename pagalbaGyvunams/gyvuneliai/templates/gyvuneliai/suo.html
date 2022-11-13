@@ -1,13 +1,26 @@
 {% extends 'gyvuneliai/main.html' %}
-
 {% block content %}
-<div class="card-deck">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{suo.photo.url}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{suo.title}}</h5>
-            <p class="card-text">{{suo.description|safe}}.</p>
-        </div>
+<div class="row card--wrapper">
+    <div class="col-12 col-md-6 col-lg-6 bg-primary">
+        <img class="animal-image" src="{{suo.photo.url}}" alt="Card image cap">
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 bg-secondary cardStats--wrapper">
+        <h2 class="cardStats--title">{{suo.title}}</h2>
+        <p class="cardStats-field"><strong>Veislė: </strong>{{suo.title}}</p>
+        <p class="cardStats-field"><strong>Amžius: </strong>{{suo.title}}</p>
+        <p class="cardStats-field"><strong>Svoris: </strong>{{suo.title}}</p>
+        <p class="cardStats-field"><strong>Lytis: </strong>{{suo.title}}</p>
+        <p class="cardStats-field"><strong>Temperamentas: </strong>{{suo.description|safe}}</p>
+        <p class="cardStats-field"><strong>Good with Dogs?: </strong>{{suo.title}}</p>
+        <p class="cardStats-field"><strong>Adoption Donation: </strong>{{suo.title}}</p>
+    </div>
+    <div class="col-12 bg-warning">
+        <p class="">
+            {{suo.description|safe}}.
+        </p>
+    </div>
+    <div class="col-12 bg-info">
+        {% include 'gyvuneliai/informacija.html' %}
     </div>
 </div>
 

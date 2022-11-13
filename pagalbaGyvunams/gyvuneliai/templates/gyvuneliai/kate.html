@@ -1,13 +1,26 @@
 {% extends 'gyvuneliai/main.html' %}
-
 {% block content %}
-<div class="card-deck">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{kate.photo.url}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{kate.title}}</h5>
-            <p class="card-text">{{kate.description|safe}}.</p>
-        </div>
+<div class="row card--wrapper">
+    <div class="col-12 col-md-6 col-lg-6 bg-primary">
+        <img class="animal-image" src="{{kate.photo.url}}" alt="Card image cap">
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 bg-secondary cardStats--wrapper">
+        <h2 class="cardStats--title">{{kate.title}}</h2>
+        <p class="cardStats-field"><strong>Veislė: </strong>{{kate.title}}</p>
+        <p class="cardStats-field"><strong>Amžius: </strong>{{kate.title}}</p>
+        <p class="cardStats-field"><strong>Svoris: </strong>{{kate.title}}</p>
+        <p class="cardStats-field"><strong>Lytis: </strong>{{kate.title}}</p>
+        <p class="cardStats-field"><strong>Temperamentas: </strong>{{kate.description|safe}}</p>
+        <p class="cardStats-field"><strong>Good with Dogs?: </strong>{{kate.title}}</p>
+        <p class="cardStats-field"><strong>Adoption Donation: </strong>{{kate.title}}</p>
+    </div>
+    <div class="col-12 bg-warning">
+        <p class="">
+            {{kate.description|safe}}.
+        </p>
+    </div>
+    <div class="col-12 bg-info">
+        {% include 'gyvuneliai/informacija.html' %}
     </div>
 </div>
 
