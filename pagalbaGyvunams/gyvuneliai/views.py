@@ -8,13 +8,29 @@ from django.db import connection
 def home(request):
 
     # animals = Animal.objects.all()
-    animals = Animal.objects.filter(active=True)
+    animals = Animal.objects.filter(active=True)[:4]
 
     print(animals)
     print(connection.queries)
 
     context = {'animals' : animals}
     return render(request, 'gyvuneliai/home.html', context)
+
+# testing RAW queries
+# Django ORM - Performing raw SQL queries
+# https://docs.djangoproject.com/en/4.1/topics/db/queries/
+# def home(request):
+
+#     sql = "SELECT * FROM gyvuneliai_Animal WHERE age = 2 ORDER BY RAND()"
+#     # sql = "SELECT * FROM gyvuneliai_Animal WHERE age = 2 ORDER BY RAND() LIMIT 3"
+#     # sql = "SELECT * FROM gyvuneliai_Animal WHERE age = 2"
+#     animals = Animal.objects.raw(sql)[:4]
+
+#     print(animals)
+#     print(connection.queries)
+
+#     context = {'animals' : animals}
+#     return render(request, 'gyvuneliai/home.html', context)
 
 
 def sunys(request):
