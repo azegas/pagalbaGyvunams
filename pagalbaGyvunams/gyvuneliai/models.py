@@ -13,26 +13,76 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-    
+
+GENDER = [
+    ('Patinas', 'Patinas'),
+    ('Patelė', 'Patelė'),
+]
+
+
 class Animal(models.Model):
     """
     Model for creating single animal in the DB
     """
     title = models.CharField(
-        max_length=200,
-        verbose_name=('vardas'),
+        max_length=50,
+        verbose_name=('Vardas'),
         help_text= ("Įrašyk gyvūnėlio vardą"),
+    )
+    breed = models.CharField(
+        null=True,
+        blank=True,
+        max_length=200,
+        verbose_name=('Veislė'),
+        help_text= ("Įrašyk gyvūnėlio veislę"),
+    )
+    age = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name=('Amžius'),
+        help_text= ("Įrašyk gyvūnėlio amžių"),
+    )
+    weight = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name=('Svoris'),
+        help_text= ("Įrašyk gyvūnėlio svorį"),
+    )
+    sex = models.CharField(
+        max_length=10,
+        verbose_name=('Lytis'),
+        choices = GENDER,
+        default = 'Patinas',
     )
     description = RichTextField(
         null=True,
         blank=True,
         help_text= ("Parašyk trumpą aprašymą apie gyvūnėlį"),
-        verbose_name=('Apie gyvunėlį'),
+        verbose_name=('Apie gyvunėlį(temperamentas)'),
     )
     active = models.BooleanField(
         default=False,
         verbose_name=('Ar įrašas aktyvus? Taip/Ne'),
         help_text= ("Jeigu neuždėsi varnelės - įrašas nebus aktyvus, nebus matomas puslapyje"),
+    )
+    good_with_dogs = models.CharField(
+        max_length = 100,
+        verbose_name = ('Ar draugauja su šunimis?'),
+        help_text= ("Trumpai"),
+        null=True,
+        blank=True,
+    )
+    good_with_cats = models.CharField(
+        max_length = 100,
+        verbose_name = ('Ar draugauja su katėmis?'),
+        help_text= ("Trumpai"),
+        null=True,
+        blank=True,
+    )
+    adoption_donation = models.IntegerField(
+        null=True,
+        blank=True,
+        verbose_name=('Adoption mokestis'),
     )
     created = models.DateTimeField(
         auto_now_add=True
