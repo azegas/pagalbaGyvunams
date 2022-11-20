@@ -1,3 +1,4 @@
+
 """
 Django settings for pagalbaGyvunams project.
 
@@ -26,7 +27,7 @@ SECRET_KEY = "django-insecure-quuu*664%azht!3&!npfy*fz#&yhn$b#5vpd_nizw31r1peeye
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
