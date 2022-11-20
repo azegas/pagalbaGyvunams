@@ -10,11 +10,12 @@ def home(request):
     # animals = Animal.objects.all()
     animals = Animal.objects.filter(active=True)[:4]
 
-    print(animals)
-    print(connection.queries)
+    # print(animals)
+    # print(connection.queries)
 
-    context = {'animals' : animals}
-    return render(request, 'gyvuneliai/home.html', context)
+    context = {"animals": animals}
+    return render(request, "gyvuneliai/home.html", context)
+
 
 # testing RAW queries
 # Django ORM - Performing raw SQL queries
@@ -36,50 +37,50 @@ def home(request):
 def sunys(request):
     sunys = Animal.objects.filter(tags__name="Suo")
 
-    print(sunys)                # little help to make sure the querry is correct
+    print(sunys)  # little help to make sure the querry is correct
 
-    context = {'sunys' : sunys}  # how you define it here, will later be used in template
-    return render(request, 'gyvuneliai/sunys.html', context)
+    context = {"sunys": sunys}  # how you define it here, will later be used in template
+    return render(request, "gyvuneliai/sunys.html", context)
 
 
 def suo(request, pk):
     suo = Animal.objects.get(id=pk)
 
-    context = {'suo' : suo}
-    return render(request, 'gyvuneliai/suo.html', context)
+    context = {"suo": suo}
+    return render(request, "gyvuneliai/suo.html", context)
 
 
 def kates(request):
     kates = Animal.objects.filter(tags__name="Kate")
 
-    print(kates)                # little help to make sure the querry is correct
+    print(kates)  # little help to make sure the querry is correct
 
-    context = {'kates' : kates}  # how you define it here, will later be used in template
-    return render(request, 'gyvuneliai/kates.html', context)
+    context = {"kates": kates}  # how you define it here, will later be used in template
+    return render(request, "gyvuneliai/kates.html", context)
 
 
 def kate(request, pk):
     kate = Animal.objects.get(id=pk)
 
-    context = {'kate' : kate}
-    return render(request, 'gyvuneliai/kate.html', context)
+    context = {"kate": kate}
+    return render(request, "gyvuneliai/kate.html", context)
 
 
 def kontaktai(request):
-    return render(request, 'gyvuneliai/kontaktai.html')
+    return render(request, "gyvuneliai/kontaktai.html")
 
 
 def apie(request):
-    return render(request, 'gyvuneliai/apie_mus.html')
+    return render(request, "gyvuneliai/apie_mus.html")
 
 
 def savanoryste(request):
-    return render(request, 'gyvuneliai/savanoryste.html')
+    return render(request, "gyvuneliai/savanoryste.html")
 
 
 def statistika(request):
-    return render(request, 'gyvuneliai/statistika.html')
+    return render(request, "gyvuneliai/statistika.html")
 
 
 def parama(request):
-    return render(request, 'gyvuneliai/parama.html')
+    return render(request, "gyvuneliai/parama.html")
