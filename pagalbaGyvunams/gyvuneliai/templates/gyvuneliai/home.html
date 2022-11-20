@@ -1,49 +1,41 @@
-{% extends 'gyvuneliai/main.html' %}
-
-{% block content %}
-<div class="hero">
-    <div class="hero-text">
-        <h1 style="font-size:50px">Sveiki lalala</h1>
-        <p>Issirink savo drauga!</p>
-        <a href="/kates">Kaciukai</a>
-        <a href="/sunys">Suniukai</a>
-    </div>
-</div>
-
-<!-- card starts here  -->
-
+{% extends 'gyvuneliai/main.html' %}{% block content %}
 <!-- raw SQL query printed in the line below -->
 {#{animals}#}
-
-<h2 class="text-center m-4">Naujausi prieglaudos gyvunėliai</h2>
-
-<div class="row mt-3">
-    {% for animal in animals %}
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="card mb-3">
-            <img class="card-img-top" src="{{animal.photo.url}}" alt="Card image cap">
-            <div class="card-body">
-                <a href="{% url 'suo' animal.id %}" class="card-title text-center stretched-link">
-                    <h5>{{animal.title}}</h5>
-                </a>
+<section id="home">
+    <div class="container">
+        <div class="subcontainer">
+            <div class="hero-image">
+                <!-- <div class="hero-text">
+                                    <h1>Sveiki atvyke!</h1>
+                                    <p>Panevezio gyvunu globos namus</p>
+                                    <button>Katytes</button>
+                                    <button>Suniukai</button>
+                                </div> -->
             </div>
+            <h2 class="home-title">Naujausi prieglaudos gyvunėliai</h2>
+            <div class="home-animal-card-wrapper">
+                {% for animal in animals %}
+                <div class="home-animal-card">
+                    <img src="{{animal.photo.url}}">
+                    <a href="{% url 'suo' animal.id %}">{{animal.title}}</a>
+                </div>
+                {% empty %}
+                <h3>no posts found...</h3>
+                {% endfor %}
+            </div>
+            <div class="home-cta">
+                <h2>Not Ready to Adopt or Foster a Dog or Pup?</h2>
+                <hr />
+                <strong>We understand that not all lifestyles and households can include a dog or cat for various
+                    reasons. For those who still care and wish to make an impact, we will gladly accept your monetary
+                    donation of any size.</strong>
+                <br />
+                <button>Parama</button>
+            </div>
+
         </div>
     </div>
-    {% empty %}
-    <h3>no posts found...</h3>
-    {% endfor %}
-</div>
-<!-- card ends here  -->
-
-<div class="row">
-    <div class="col bg-info p-4 text-center mb-2">
-        <h2>Not Ready to Adopt or Foster a Dog or Pup?</h2>
-        <hr />
-        <strong>We understand that not all lifestyles and households can include a dog or cat for various reasons. For those who still care and wish to make an impact, we will gladly accept your monetary donation of any size.</strong>
-        <br />
-        <button type="button" class="btn btn-danger btn-lg">Make My Donation</button>
-        </div>
-</div>
+</section>
 
 
 {% endblock content %}

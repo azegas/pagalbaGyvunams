@@ -1,28 +1,22 @@
-{% extends 'gyvuneliai/main.html' %}
-{% block content %}
-<div class="row card--wrapper">
-    <div class="col-12 col-md-6 col-lg-6 bg-primary">
-        <img class="animal-image" src="{{suo.photo.url}}" alt="Card image cap">
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 bg-secondary cardStats--wrapper">
-        <h2 class="cardStats--title">{{suo.title}}</h2>
-        <p class="cardStats--field"><strong>Veislė: </strong>{{suo.breed}}</p>
-        <p class="cardStats--field"><strong>Amžius: </strong>{{suo.age}}</p>
-        <p class="cardStats--field"><strong>Svoris: </strong>{{suo.weight}} kg.</p>
-        <p class="cardStats--field"><strong>Lytis: </strong>{{suo.sex}}</p>
-        <p class="cardStats--field"><strong>Temperamentas: </strong>{{suo.description|safe}}</p>
-        <p class="cardStats--field"><strong>Good with Dogs?: </strong>{{suo.good_with_dogs}}</p>
-        <p class="cardStats--field"><strong>Good with Cats?: </strong>{{suo.good_with_cats}}</p>
-        <p class="cardStats--field"><strong>Adoption Donation: </strong>{{suo.adoption_donation}} eur.</p>
-    </div>
-    <div class="col-12 bg-warning pb-4 pt-4">
-        <p class="mb-0">
+{% extends 'gyvuneliai/main.html' %}{% block content %}
+<div class="container">
+    <div class="subcontainer">
+        <div id="animal-card">
+            <img class="animal-image" src="{{suo.photo.url}}" alt="Card image cap">
+            <h2 class="cardStats--title">{{suo.title}}</h2>
+            <p class="cardStats--field"><strong>Veislė: </strong>{{suo.breed}}</p>
+            <p class="cardStats--field"><strong>Amžius: </strong>{{suo.age}}</p>
+            <p class="cardStats--field"><strong>Svoris: </strong>{{suo.weight}} kg.</p>
+            <p class="cardStats--field"><strong>Lytis: </strong>{{suo.sex}}</p>
+            <p class="cardStats--field"><strong>Temperamentas: </strong>{{suo.description|safe}}</p>
+            <p class="cardStats--field"><strong>Good with Dogs?: </strong>{{suo.good_with_dogs}}</p>
+            <p class="cardStats--field"><strong>Good with Cats?: </strong>{{suo.good_with_cats}}</p>
+            <p class="cardStats--field"><strong>Adoption Donation: </strong>{{suo.adoption_donation}} eur.</p>
             {{suo.story|safe}}
-        </p>
-    </div>
-    <div class="col-12 bg-info">
-        {% include 'gyvuneliai/informacija.html' %}
+            {#% include 'gyvuneliai/informacija.html' %#}
+        </div>
     </div>
 </div>
+
 
 {% endblock content %}

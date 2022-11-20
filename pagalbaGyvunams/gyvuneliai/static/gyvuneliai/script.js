@@ -30,3 +30,13 @@
 // if (laukelio_laukelis.innerHTML.length == 0) {
 //   laukelio_laukelis.innerHTML = "AAA";
 // }
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+// added click event listened to EVERY element that has class
+// active(mostly hamburger stuff)
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+});
