@@ -40,7 +40,8 @@
   typing `pip list` again and now you will see ONLY the packages that
   are instaleld in this virtual environment.
 - let's install packages that are needed to run this project.
-- Do that by typing `pip install -r requirements.txt`
+- Do that by typing `pip install -r requirements.txt` (make sure you
+  are in the folder the same folder that has requirements.txt in it).
 
 ### Running the project
 
