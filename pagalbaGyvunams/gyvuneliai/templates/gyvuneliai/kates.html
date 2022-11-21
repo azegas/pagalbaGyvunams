@@ -1,26 +1,25 @@
 {% extends 'gyvuneliai/main.html' %}
 
 {% block content %}
-
-<h1>Kates</h1>
-
 <!-- card starts here  -->
-<div class="row">
-    <!-- "kates" is defined in views context -->
-    {% for kate in kates %}
-    <div class="col-12 col-md-6 col-lg-3">
-        <div class="card mb-3">
-            <img class="card-img-top" src="{{kate.photo.url}}" alt="Card image cap">
-            <div class="card-body">
-                <a href="{% url 'kate' kate.id %}" class="card-title text-center stretched-link">
-                    <h5>{{kate.title}}</h5>
-                </a>
+<section id="animal-gallery">
+    <div class="container">
+        <div class="subcontainer">
+            <h1 class="page-title">Kates</h1>
+            <div class="animal-gallery-wrapper">
+                {% for kate in kates %}
+                <div class="animal-gallery-card">
+                    <img class="animal-gallery-card-img" src="{{kate.photo.url}}" alt="Card image cap">
+                    <a href="{% url 'kate' kate.id %}" class="animal-gallery-card-title">
+                        <h5 class="animal-gallery-card-title">{{kate.title}}</h5>
+                </div>
+                {% empty %}
+                <h3>no posts found...</h3>
+                {% endfor %}
             </div>
         </div>
     </div>
-    {% empty %}
-    <h3>no posts found...</h3>
-    {% endfor %}
+</section>
 </div>
 <!-- card ends here  -->
 

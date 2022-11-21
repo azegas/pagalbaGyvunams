@@ -1,18 +1,30 @@
-{% extends 'gyvuneliai/main.html' %}{% block content %}
+{% extends 'gyvuneliai/main.html' %}
+{% block content %}
 <!-- raw SQL query printed in the line below -->
 {#{animals}#}
 <section id="home">
     <div class="container">
         <div class="subcontainer">
             <div class="hero-image">
-                <!-- <div class="hero-text">
-                                    <h1>Sveiki atvyke!</h1>
-                                    <p>Panevezio gyvunu globos namus</p>
-                                    <button>Katytes</button>
-                                    <button>Suniukai</button>
-                                </div> -->
+                <div class="hero-text">
+                    <h1 class="hero-title">Finding Forever Homes for Dogs and Cats Since 2002</h1>
+                    <p class="hero-subtitle">Panevezio gyvunu globos namai is a no-kill shelter that rescues and cares
+                        for homeless pets.
+                    </p>
+                    <br />
+                    <div class="hero-buttons">
+                        <button class="btn btn-hero">
+                            <a href="/sunys">Rask suniuka</a>
+                        </button>
+                        <p>ARBA</p>
+                        <button class="btn btn-hero">
+                            <a href="/kates">Rask katineli</a>
+                        </button>
+                    </div>
+
+                </div>
             </div>
-            <h2 class="home-title">Naujausi prieglaudos gyvunėliai</h2>
+            <h2 class="page-title">Naujausi prieglaudos gyvunėliai</h2>
             <div class="home-animal-card-wrapper">
                 {% for animal in animals %}
                 <div class="home-animal-card">
@@ -25,17 +37,15 @@
             </div>
             <div class="home-cta">
                 <h2>Not Ready to Adopt or Foster a Dog or Pup?</h2>
-                <hr />
-                <strong>We understand that not all lifestyles and households can include a dog or cat for various
+                <p>We understand that not all lifestyles and households can include a dog or cat for various
                     reasons. For those who still care and wish to make an impact, we will gladly accept your monetary
-                    donation of any size.</strong>
-                <br />
-                <button>Parama</button>
+                    donation of any size.</p>
+                <div>
+                    <button class="btn btn-hero"><a href="/parama">Parama</a></button>
+                </div>
             </div>
-
         </div>
     </div>
 </section>
-
 
 {% endblock content %}

@@ -1,19 +1,32 @@
 {% extends 'gyvuneliai/main.html' %}{% block content %}
-<div class="container">
-    <div class="subcontainer">
-        <div id="animal-card">
-            <img class="animal-image" src="{{suo.photo.url}}" alt="Card image cap">
-            <h2 class="cardStats--title">{{suo.title}}</h2>
-            <p class="cardStats--field"><strong>Veislė: </strong>{{suo.breed}}</p>
-            <p class="cardStats--field"><strong>Amžius: </strong>{{suo.age}}</p>
-            <p class="cardStats--field"><strong>Svoris: </strong>{{suo.weight}} kg.</p>
-            <p class="cardStats--field"><strong>Lytis: </strong>{{suo.sex}}</p>
-            <p class="cardStats--field"><strong>Temperamentas: </strong>{{suo.description|safe}}</p>
-            <p class="cardStats--field"><strong>Good with Dogs?: </strong>{{suo.good_with_dogs}}</p>
-            <p class="cardStats--field"><strong>Good with Cats?: </strong>{{suo.good_with_cats}}</p>
-            <p class="cardStats--field"><strong>Adoption Donation: </strong>{{suo.adoption_donation}} eur.</p>
-            {{suo.story|safe}}
-            {#% include 'gyvuneliai/informacija.html' %#}
+<div id="animal-profile">
+    <div class="container">
+        <div class="subcontainer">
+            <h2 class="page-title">Ciucikas vardu {{suo.title}}</h2>
+            <div class="animal-profile-wrapper">
+                <img class="animal-profile-img" src="{{suo.photo.url}}" alt="Card image cap">
+                <div class="animal-profile-info">
+                    <h2 class="animal-profile-title">{{suo.title}}</h2>
+                    <p class="animal-profile-info-title">
+                        <strong>Veislė: </strong>
+                        {{suo.breed}}
+                    </p>
+                    <p class="animal-profile-info-title"><strong>Amžius: </strong>{{suo.age}}</p>
+                    <p class="animal-profile-info-title"><strong>Svoris: </strong>{{suo.weight}} kg.</p>
+                    <p class="animal-profile-info-title"><strong>Lytis: </strong>{{suo.sex}}</p>
+                    <p class="animal-profile-info-title"><strong>Temperamentas: </strong>{{suo.description|safe}}</p>
+                    <p class="animal-profile-info-title"><strong>Good with Dogs?: </strong>{{suo.good_with_dogs}}</p>
+                    <p class="animal-profile-info-title"><strong>Good with Cats?: </strong>{{suo.good_with_cats}}</p>
+                    <p class="animal-profile-info-title"><strong>Adoption Donation: </strong>{{suo.adoption_donation}} eur.</p>
+                </div>
+            </div>
+            <p class="animal-profile-description">
+                <h2>Gyvunelio platesnis description</h2>
+                {{suo.story|safe}}
+            </p>
+            <br />
+            <h2>Info apie visus musu gyvunelius</h2>
+            {% include 'gyvuneliai/informacija.html' %}
         </div>
     </div>
 </div>

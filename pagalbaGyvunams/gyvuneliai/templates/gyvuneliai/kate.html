@@ -1,28 +1,36 @@
-{% extends 'gyvuneliai/main.html' %}
-{% block content %}
-<div class="row card--wrapper">
-    <div class="col-12 col-md-6 col-lg-6 bg-primary">
-        <img class="animal-image" src="{{kate.photo.url}}" alt="Card image cap">
-    </div>
-    <div class="col-12 col-md-6 col-lg-6 bg-secondary cardStats--wrapper">
-        <h2 class="cardStats--title">{{kate.title}}</h2>
-        <p class="cardStats--field"><strong>Veislė: </strong>{{kate.breed}}</p>
-        <p class="cardStats--field"><strong>Amžius: </strong>{{kate.age}}</p>
-        <p class="cardStats--field"><strong>Svoris: </strong>{{kate.weight}} kg.</p>
-        <p class="cardStats--field"><strong>Lytis: </strong>{{kate.sex}}</p>
-        <p class="cardStats--field"><strong>Temperamentas: </strong>{{kate.description|safe}}</p>
-        <p class="cardStats--field"><strong>Good with Dogs?: </strong>{{kate.good_with_dogs}}</p>
-        <p class="cardStats--field"><strong>Good with Cats?: </strong>{{kate.good_with_cats}}</p>
-        <p class="cardStats--field"><strong>Adoption Donation: </strong>{{kate.adoption_donation}} eur.</p>
-    </div>
-    <div class="col-12 bg-warning pb-4 pt-4">
-        <p class="mb-0">
+{% extends 'gyvuneliai/main.html' %}{% block content %}
+<div id="animal-profile">
+    <div class="container">
+        <div class="subcontainer">
+            <h2 class="page-title">Katinelis vardu {{kate.title}}</h2>
+            <div class="animal-profile-wrapper">
+                <img class="animal-profile-img" src="{{kate.photo.url}}" alt="Card image cap">
+                <div class="animal-profile-info">
+                    <h2 class="animal-profile-title">{{kate.title}}</h2>
+                    <p class="animal-profile-info-title">
+                        <strong>Veislė: </strong>
+                        {{kate.breed}}
+                    </p>
+                    <p class="animal-profile-info-title"><strong>Amžius: </strong>{{kate.age}}</p>
+                    <p class="animal-profile-info-title"><strong>Svoris: </strong>{{kate.weight}} kg.</p>
+                    <p class="animal-profile-info-title"><strong>Lytis: </strong>{{kate.sex}}</p>
+                    <p class="animal-profile-info-title"><strong>Temperamentas: </strong>{{kate.description|safe}}</p>
+                    <p class="animal-profile-info-title"><strong>Good with Dogs?: </strong>{{kate.good_with_dogs}}</p>
+                    <p class="animal-profile-info-title"><strong>Good with Cats?: </strong>{{kate.good_with_cats}}</p>
+                    <p class="animal-profile-info-title"><strong>Adoption Donation: </strong>{{kate.adoption_donation}}
+                        eur.</p>
+                </div>
+            </div>
+            <p class="animal-profile-description">
+            <h2>Gyvunelio platesnis description</h2>
             {{kate.story|safe}}
-        </p>
-    </div>
-    <div class="col-12 bg-info">
-        {% include 'gyvuneliai/informacija.html' %}
+            </p>
+            <br />
+            <h2>Info apie visus musu gyvunelius</h2>
+            {% include 'gyvuneliai/informacija.html' %}
+        </div>
     </div>
 </div>
+
 
 {% endblock content %}
