@@ -5,7 +5,7 @@
 ### Installing system dependencies
 
 - Make sure you have **Python** installed on your system, check that by
-  opening command line(cmd) and typing in`python --version`. If the output is
+  opening command line(cmd) and typing in `python --version`. If the output is
   similar to **Python 3.8.10** - you are good to go. If it says **python is
   not found** -  download and install it [Here](https://www.python.org/downloads/).
 - Make sure [git](https://www.python.org/downloads/) is installed in on your system.
@@ -18,7 +18,7 @@
   it](https://www.geeksforgeeks.org/how-to-install-pip-on-windows/) if
   you haven't already.
   
-### Installing pyton dependencies
+### Installing python dependencies
 
 - Every Django python project has dependencies(or packages which
   allow the project to run). Usually those packages are listed in
