@@ -42,6 +42,21 @@
 - let's install packages that are needed to run this project.
 - Do that by typing `pip install -r requirements.txt` (make sure you
   are in the same folder that has requirements.txt in it).
+  
+### Handling secret variables
+
+- What is secret - has to remain secret
+- Take `.env_example` file and rename it to `.env`
+- Now take the [secret
+  key](https://stackoverflow.com/questions/7382149/whats-the-purpose-of-django-setting-secret-key)
+  value from `settings.py` and place it in `.env` appropriate field
+- now instead of the secret key being exposed to the public when you
+  push yourf project to github, it will remain in your system, .env
+  file which is [gitignored](https://git-scm.com/docs/gitignore) and
+  is not pushed to git.
+- Now our secret values are secret. As you can see in .env file we can
+  also define our allowed hosts, debug value and possibly other
+  variables in the future.
 
 ### Running the project
 
