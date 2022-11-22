@@ -38,10 +38,10 @@
 - a little word **(venv)** should appear at the left of your command line. It
   indicates, that we are "inside" this "virtual environment" now. Try
   typing `pip list` again and now you will see ONLY the packages that
-  are instaleld in this virtual environment.
+  are installed in this virtual environment.
 - let's install packages that are needed to run this project.
 - Do that by typing `pip install -r requirements.txt` (make sure you
-  are in the folder the same folder that has requirements.txt in it).
+  are in the same folder that has requirements.txt in it).
 
 ### Running the project
 
@@ -49,5 +49,5 @@
   located in the same folder where **manage.py** file is.
 - Then write `python manage.py migrate` and press enter.
 - Now write `python manage.py runserver` and press ented.
-- Go to your browser and open http://127.0.0.1:8000/ you should now
-  see the project running.
+- Go to your browser and open http://127.0.0.1:8000/ 
+- You should now see the project running in your local environment.
