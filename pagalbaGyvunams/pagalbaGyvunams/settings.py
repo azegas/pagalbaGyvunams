@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://pagalbagyvunams-production.up.railway.app/"
+    "pagalbagyvunams-production.up.railway.app"
 ]  # if we are in debug mode, we dont really care about the host
 # # but if we are in production, fetch allowed hosts from .env file
 # if not DEBUG:
