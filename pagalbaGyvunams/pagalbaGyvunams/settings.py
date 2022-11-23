@@ -26,12 +26,15 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # print(SECRET_KEY)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = str(os.environ.get("DEBUG")) == "1"  # 1 == True(debug mode on)
+# DEBUG = str(os.environ.get("DEBUG")) == "1"  # 1 == True(debug mode on)
+DEBUG = False
 
-ALLOWED_HOSTS = []  # if we are in debug mode, we dont really care about the host
-# but if we are in production, fetch allowed hosts from .env file
-if not DEBUG:
-    ALLOWED_HOSTS += [os.environ.get("ALLOWED_HOSTS")]
+ALLOWED_HOSTS = [
+    "https://pagalbagyvunams-production.up.railway.app/"
+]  # if we are in debug mode, we dont really care about the host
+# # but if we are in production, fetch allowed hosts from .env file
+# if not DEBUG:
+#     ALLOWED_HOSTS += [os.environ.get("ALLOWED_HOSTS")]
 
 # Application definition
 
