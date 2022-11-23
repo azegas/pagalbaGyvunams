@@ -1,4 +1,3 @@
-
 """
 Django settings for pagalbaGyvunams project.
 
@@ -35,6 +34,8 @@ ALLOWED_HOSTS = [
 # # but if we are in production, fetch allowed hosts from .env file
 # if not DEBUG:
 #     ALLOWED_HOSTS += [os.environ.get("ALLOWED_HOSTS")]
+
+CSRF_TRUSTED_ORIGINS = ["https://pagalbagyvunams-production.up.railway.app/"]
 
 # Application definition
 
@@ -136,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
