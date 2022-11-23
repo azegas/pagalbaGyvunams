@@ -35,7 +35,7 @@ ALLOWED_HOSTS = [
 # if not DEBUG:
 #     ALLOWED_HOSTS += [os.environ.get("ALLOWED_HOSTS")]
 
-CSRF_TRUSTED_ORIGINS = ["https://pagalbagyvunams-production.up.railway.app/"]
+CSRF_TRUSTED_ORIGINS = ["https://pagalbagyvunams-production.up.railway.app"]
 
 # Application definition
 
