@@ -88,7 +88,7 @@ DB_HOST = os.environ.get("DB_HOST")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "pagalbagyvunams",
+        "NAME": "railway",
         "USER": DB_USER,
         "PASSWORD": DB_PASSWORD,
         "HOST": DB_HOST,
