@@ -1,4 +1,4 @@
-# pagalbaGyvunams DEV branch
+# pagalbaGyvunams
 
 ## How to launch this app
 
