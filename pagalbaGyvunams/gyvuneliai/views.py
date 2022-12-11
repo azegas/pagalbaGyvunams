@@ -8,7 +8,7 @@ from django.db import connection
 def home(request):
 
     # animals = Animal.objects.all()
-    animals = Animal.objects.filter(active=True)[:4]
+    animals = Animal.objects.filter(active=True)[:8]
 
     # print(animals)
     # print(connection.queries)
