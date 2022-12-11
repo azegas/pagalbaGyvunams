@@ -25,13 +25,13 @@
                 </div>
             </div>
             <h2 class="page-title">Naujausi prieglaudos gyvunėliai</h2>
-            <div class="home-animal-card-wrapper">
+            <div class="animal-gallery-wrapper">
                 {% for animal in animals %}
-                <div class="home-animal-card">
-                    <img src="{{animal.photo.url}}">
-                    <a href="{% url 'suo' animal.id %}">{{animal.title}}</a>
-                </div>
-                {% empty %}
+                <a href="{% url 'suo' animal.id %}" class="animal-gallery-card">
+                    <img class="animal-gallery-card-img" src="{{animal.photo.url}}" alt="Card image cap">
+                    <h5 class="animal-gallery-card-title">{{animal.title}}</h5>
+                </a>
+                    {% empty %}
                 <h3>no posts found...</h3>
                 {% endfor %}
             </div>

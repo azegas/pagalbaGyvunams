@@ -5,14 +5,13 @@
 <section id="animal-gallery">
     <div class="container">
         <div class="subcontainer">
-            <h1 class="page-title">Sunys</h1>
+            <h1 class="page-title">Šunys</h1>
             <div class="animal-gallery-wrapper">
                 {% for suo in sunys %}
-                <div class="animal-gallery-card">
+                <a href="{% url 'suo' suo.id %}" class="animal-gallery-card">
                     <img class="animal-gallery-card-img" src="{{suo.photo.url}}" alt="Card image cap">
-                    <a href="{% url 'suo' suo.id %}" class="animal-gallery-card-title">
-                        <h5 class="animal-gallery-card-title">{{suo.title}}</h5>
-                </div>
+                    <h5 class="animal-gallery-card-title">{{suo.title}}</h5>
+                </a>
                 {% empty %}
                 <h3>no posts found...</h3>
                 {% endfor %}
