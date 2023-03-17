@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,16 +30,18 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = str(os.environ.get("DEBUG")) == "1"  # 1 == True(debug mode on)
-DEBUG = True
+DEBUG = os.environ.get("DEBUG")
 
-ALLOWED_HOSTS = [
-    "pagalbagyvunams-production.up.railway.app"
-]  # if we are in debug mode, we dont really care about the host
+ALLOWED_HOSTS = ["*"]
+
+# ALLOWED_HOSTS = ["pagalbagyvunams-production.up.railway.app"]
+# if we are in debug mode, we dont really care about the host
 # # but if we are in production, fetch allowed hosts from .env file
 # if not DEBUG:
 #     ALLOWED_HOSTS += [os.environ.get("ALLOWED_HOSTS")]
 
-CSRF_TRUSTED_ORIGINS = ["https://pagalbagyvunams-production.up.railway.app"]
+# CSRF_TRUSTED_ORIGINS = ["https://pagalbagyvunams-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["http://localhost:8000/"]
 
 # Application definition
 
@@ -85,18 +91,25 @@ WSGI_APPLICATION = "pagalbaGyvunams.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DB_USER = os.environ.get("DB_USER")
-DB_PASSWORD = os.environ.get("DB_PASSWORD")
-DB_HOST = os.environ.get("DB_HOST")
+# DB_USER = os.environ.get("DB_USER")
+# DB_PASSWORD = os.environ.get("DB_PASSWORD")
+# DB_HOST = os.environ.get("DB_HOST")
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "railway",
+#         "USER": DB_USER,
+#         "PASSWORD": DB_PASSWORD,
+#         "HOST": DB_HOST,
+#         "PORT": "7564",
+#     }
+# }
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "railway",
-        "USER": DB_USER,
-        "PASSWORD": DB_PASSWORD,
-        "HOST": DB_HOST,
-        "PORT": "7564",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
