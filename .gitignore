@@ -1,6 +1,5 @@
-env/
 .env
-.venv/
+venv/
 *.pyc
 *.xlsx
 *.sqlite3
