@@ -1,0 +1,165 @@
+* pagalbaGyvunams
+** NEXT Write in django group asking for help
+to join a collaborative project
+** TODO Gyvuneliu blog into separate app
+** TODO Padaryk pagalbagyvunams kazka tokio
+https://www.google.com/search?q=there+is.alwsys+this.onr.dog&oq=there+is.alwsys+this.onr.dog&aqs=chrome..69i57j0i22i30l8.4638j0j7&client=ms-android-samsung-gs-rev1&sourceid=chrome-mobile&ie=UTF-8&chrome_dse_attribution=1
+** TODO https://www.instagram.com/reel/Cka5_XAul1x/?utm_source=ig_web_copy_link
+** TODO design inspiration
+- https://www.luckydoganimalrescue.org/home
+- https://www.petfinder.com/
+- https://www.animalhouseshelter.com/
+- https://padekman.lt/
+- https://penktakoja.lt/
+- https://animalrescuekharkiv.com/
+- Vsi mazas draugas
+
+* EPICS [1/10]
+#+BEGIN: clocktable :maxlevel 3 :emphasize nil :scope subtree :properties ("Effort") :narrow 60!
+#+CAPTION: Clock summary at [2023-03-21 Tue 20:01]
+| Effort | Headline                                                        | Time |      |      |
+|--------+-----------------------------------------------------------------+------+------+------|
+|        | *Total time*                                                      | *0:15* |      |      |
+|--------+-----------------------------------------------------------------+------+------+------|
+|        | EPICS [1/10]                                                    | 0:15 |      |      |
+|        | \_  prepare emacs [11/11]                                       |      | 0:06 |      |
+|   0:10 | \_    sukurk lentele sitam projektui su laiko estimations ir... |      |      | 0:06 |
+|        | \_  Documentation [1/3]                                         |      | 0:09 |      |
+|   0:30 | \_    Review the current documentation                          |      |      | 0:09 |
+#+END:
+
+** DONE prepare emacs [11/11]
+CLOSED: [2023-03-21 Tue 19:33]
+#+BEGIN: clocktable :maxlevel 5 :emphasize nil :scope subtree :properties ("Effort")
+#+CAPTION: Clock summary at [2023-03-21 Tue 19:31]
+| Effort | Headline                                   | Time |      |      |
+|--------+--------------------------------------------+------+------+------|
+|        | *Total time*                                 | *0:06* |      |      |
+|--------+--------------------------------------------+------+------+------|
+|        | \_  prepare emacs [9/11]                   |      | 0:06 |      |
+|   0:10 | \_    sukurk lentele sitam projektui su... |      |      | 0:06 |
+#+END:
+*** DONE push current emacs config to git
+CLOSED: [2023-03-18 Sat 04:13]
+*** DONE susikurk atskira branch kur yra dalykai bendrai ir kur darysiu kaip individualiuose projektuose
+CLOSED: [2023-03-21 Tue 19:27]
+*** CANCELLED perziurek visus org failus ir surask epicus
+CLOSED: [2023-03-18 Sat 04:16]
+*** DONE perkelk sita faila i projekto git folderi
+CLOSED: [2023-03-18 Sat 04:16]
+*** DONE susitvaryk refilinima, kad leistu viename faile refilinti
+CLOSED: [2023-03-18 Sat 04:16]
+*** DONE susikurk atskira dokumentaciju faila, gal readme? Ten rasyk viska. Bet ne, geriau org.
+CLOSED: [2023-03-18 Sat 04:21]
+*** DONE Create EPIC keyword and assign to epics
+CLOSED: [2023-03-18 Sat 04:27]
+*** DONE .org file for configuration
+CLOSED: [2023-03-21 Tue 19:22]
+**** create one .org file, make it work, add the rest of the config in it
+**** all the shortcuts next to the particular package
+*** DONE Hide this file or make it pubic?                              :note:
+CLOSED: [2023-03-21 Tue 19:32]
+:PROPERTIES:
+:Effort:   0:10
+:END:
+:LOGBOOK:
+- Note taken on [2023-03-21 Tue 19:32] \\
+  leaving it open for now
+:END:
+*** DONE sukurk lentele sitam projektui su laiko estimations ir predictions kiek uztruks
+CLOSED: [2023-03-21 Tue 19:31]
+:PROPERTIES:
+:Effort:   0:10
+:END:
+ :LOGBOOK:
+CLOCK: [2023-03-21 Tue 19:25]--[2023-03-21 Tue 19:31] =>  0:06
+:END:
+*** DONE Daryk pull requeseta i master su situo branchu kai baigsi sita epica
+CLOSED: [2023-03-21 Tue 19:32]
+** EPIC Documentation [1/3]
+*** DONE Write documentation along the way about each step
+CLOSED: [2023-03-21 Tue 19:36]
+*** WAITING Review the current documentation
+:PROPERTIES:
+:Effort:   0:30
+:ORDERED:  t
+:END:
+:LOGBOOK:
+CLOCK: [2023-03-21 Tue 19:51]--[2023-03-21 Tue 20:00] =>  0:09
+- nusokau ziureti emacsc dalyku.. stumiu laiko iki atsiskaitymo
+:END:
+*** TODO write brief documentation about current setup
+:PROPERTIES:
+:Effort:   2:00
+:END:
+** EPIC Get to know to the app(AGAIN) [0/3]
+*** TODO read every line of code
+*** TODO check all the branches
+** EPIC Research the most useful django addons [0/1]
+*** TODO listen to the podcasts where they talk about django tools
+** EPIC Research django security [0/3]
+*** TODO Listen to django security podcast
+*** TODO Apply what you have learned
+*** TODO Document steps for deployment
+** EPIC Add some backend logic
+*** TODO Make it so that the newest animals are displayed first
+*** TODO Try to implement sorting of animals(by age)
+*** TODO for fun try to make some sort of API to be able to extract the animals(with flask)
+*** TODO Jazzmin for admin panel
+** EPIC beautify the Frontend [0/4]
+*** TODO Ask chatgpt for tips
+*** TODO Make single animal page image display nicely
+*** TODO Make homepage animal images display properly
+*** TODO use tailwind or bootstrap for it
+** EPIC host the app, use sqlite.db [0/3]
+*** TODO host the app on linode server
+*** TODO set up env variables
+*** TODO set up pushing to github and immediately deploy to server
+** EPIC Let the client interact with it [0/3]
+*** TODO create the client an admin account
+*** TODO provide client the link to the site
+*** TODO instruct the client how to add new animals in /admin
+** EPIC Other features
+*** TODO Notification - email when new animal is inputted to db
+*** TODO Domeno varda pridek
+*** TODO Pridek GTM kad sekti analytics
+
+* Archive                                                           :ARCHIVE:
+
+** Schema kaip sudaryti dalykai per railway
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-03-17 Fri 17:18
+:ARCHIVE_FILE: ~/Dropbox/org/pagalbaGyvunams.org
+:ARCHIVE_CATEGORY: pagalbaGyvunams
+:ARCHIVE_OLPATH: pagalbaGyvunams
+:END:
+
+Linux -> postgres db-> postgres user -> pgadmin - 127.0.01. -> /admin
+-> createsuperuser -> add items and see them there -> pgadmin again
+**
+
+** require a pull request before merging in github
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-03-17 Fri 17:18
+:ARCHIVE_FILE: ~/Dropbox/org/pagalbaGyvunams.org
+:ARCHIVE_CATEGORY: pagalbaGyvunams
+:ARCHIVE_OLPATH: pagalbaGyvunams
+:END:
+tipo saugiau, kai dirbi komandoje
+
+** Pagalba gyvunams su bootstrap or tailwind worry less frintebd
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-03-17 Fri 17:22
+:ARCHIVE_FILE: ~/Dropbox/org/pagalbaGyvunams.org
+:ARCHIVE_CATEGORY: pagalbaGyvunams
+:ARCHIVE_OLPATH: pagalbaGyvunams
+:END:
+
+** TODO Image choose from library or upload new
+:PROPERTIES:
+:ARCHIVE_TIME: 2023-03-17 Fri 17:38
+:ARCHIVE_FILE: ~/Dropbox/org/pagalbaGyvunams.org
+:ARCHIVE_CATEGORY: pagalbaGyvunams
+:ARCHIVE_TODO: TODO
+:ARCHIVE_OLPATH: pagalbaGyvunams
+:END:
